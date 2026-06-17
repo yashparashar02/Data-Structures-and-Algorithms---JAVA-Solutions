@@ -12,7 +12,7 @@ public class smallestDivisor {
     return sum;
   }
   static int smallestDiv(int nums[], int limit) {
-    int maxNum=Integer.MAX_VALUE;
+    int maxNum=Integer.MIN_VALUE;
 
     for(int num: nums)
       maxNum=Math.max(maxNum, num);
@@ -37,7 +37,7 @@ public class smallestDivisor {
     System.out.println("Enter the number elemnts");
     int n=s.nextInt(), nums[]=new int[n], i;
 
-    System.out.println("Enter "+n+" no. of elements");
+    System.out.println("Enter "+n+" values");
     for(i=0; i<n; i++)
       nums[i]=s.nextInt();
 
