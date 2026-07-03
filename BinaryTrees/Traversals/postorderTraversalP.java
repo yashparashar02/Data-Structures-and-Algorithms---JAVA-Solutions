@@ -8,36 +8,49 @@ class TreeNode {
   int data;
   TreeNode left, right;
 
+  TreeNode() {}
+
   TreeNode(int data) {
     this.data=data;
   }
+  
+  TreeNode(int data, TreeNode left, TreeNode right) {
+    this.data=data;
+    this.left=left;
+    this.right=right;
+  }
 }
 
-public class inorderTraversalP {
-  static List<Integer> inorder(TreeNode root) {
+public class postorderTraversalP {
+  static List<Integer> postorder(TreeNode root) {
     List<Integer> ans=new ArrayList<>();
-
     Stack<TreeNode> stack=new Stack<>();
-    
-    TreeNode current=root;
+
+    TreeNode current=root, lastVisited=null;
 
     while(current != null || !stack.isEmpty()) {
-      while (current != null) {
+      if(current != null) {
         stack.push(current);
         current=current.left;
       }
 
-      current=stack.pop();
+      else {
+        TreeNode peek=stack.peek();
 
-      ans.add(current.data);
+        if(peek.right != null && lastVisited != peek.right)
+          current=peek.right;
 
-      current=current.right;
+        else {
+          ans.add(peek.data);
+          lastVisited=stack.pop();
+        }
+      }
     }
     return ans;
   }
   public static void main(String[] args) {
     
-    System.out.println("Inorder Traversal");
+    System.out.println("Postorder Traversal");
     TreeNode root=new TreeNode(1);
     root.left=new TreeNode(2);
     root.right=new TreeNode(3);
@@ -49,6 +62,6 @@ public class inorderTraversalP {
     root.right.right=new TreeNode(7);
     root.right.right.right=new TreeNode(10);
 
-    System.out.println(inorder(root));
+    System.out.println(postorder(root));
   }
 }
