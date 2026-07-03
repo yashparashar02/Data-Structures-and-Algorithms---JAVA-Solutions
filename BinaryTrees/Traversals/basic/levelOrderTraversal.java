@@ -1,4 +1,4 @@
-package BinaryTrees.Traversals;
+package BinaryTrees.Traversals.basic;
 
 import java.util.LinkedList;
 import java.util.Queue;
