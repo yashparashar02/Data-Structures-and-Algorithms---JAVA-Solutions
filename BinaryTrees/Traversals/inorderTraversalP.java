@@ -13,26 +13,25 @@ class TreeNode {
   }
 }
 
-public class preorderTraversalP {
-  static List<Integer> preorder(TreeNode root) {
+public class inorderTraversalP {
+  static List<Integer> inorder(TreeNode root) {
     List<Integer> ans=new ArrayList<>();
 
-    if(root == null)
-      return ans;
-
     Stack<TreeNode> stack=new Stack<>();
-    stack.push(root);
+    
+    TreeNode current=root;
 
-    while(!stack.isEmpty()) {
-      TreeNode node=stack.pop();
+    while(current != null || !stack.isEmpty()) {
+      while (current != null) {
+        stack.push(current);
+        current=current.left;
+      }
 
-      ans.add(node.data);
+      current=stack.pop();
 
-      if(node.right != null)
-        stack.push(node.right);
+      ans.add(current.data);
 
-      if(node.left != null)
-        stack.push(node.left);
+      current=current.right;
     }
     return ans;
   }
@@ -50,6 +49,6 @@ public class preorderTraversalP {
     root.right.right=new TreeNode(7);
     root.right.right.right=new TreeNode(10);
 
-    System.out.println(preorder(root));
+    System.out.println(inorder(root));
   }
 }
