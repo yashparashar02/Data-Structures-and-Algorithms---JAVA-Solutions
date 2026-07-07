@@ -23,7 +23,7 @@ public class maxNestingDepthFreq {
     System.out.println("Enter the String");
     String s=sc.nextLine();
 
-    System.out.println("The Maximum no. Nested Valid Paranthesis are: "+maxDepthFreq(s));
+    System.out.println("The Maximum Nesting Depth of Paranthesis are: "+maxDepthFreq(s));
     sc.close();
   }
 }
