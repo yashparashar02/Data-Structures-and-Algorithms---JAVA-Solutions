@@ -22,6 +22,16 @@ class TreeNode {
   }
 }
 
+class Pair {
+  TreeNode node;
+  int hd;
+
+  Pair(TreeNode node, int hd) {
+    this.node = node;
+    this.hd = hd;
+  }
+}
+
 public class bottomView {
   static List<Integer> view(TreeNode root) {
     List<Integer> result=new ArrayList<>();
