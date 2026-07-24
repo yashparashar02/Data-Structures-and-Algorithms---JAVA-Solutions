@@ -19,8 +19,8 @@ class TreeNode {
   }
 }
 
-public class leftView {
-  static List<Integer> viewLeft(TreeNode root) {
+public class rightView {
+  static List<Integer> viewRight(TreeNode root) {
     List<Integer> result=new ArrayList<>();
 
     dfs(root, 0, result);
@@ -50,6 +50,6 @@ public class leftView {
     root.right.right=new TreeNode(7);
     root.right.right.right=new TreeNode(10);
 
-    System.out.println("The Left View of the Binary Tree is "+viewLeft(root));
+    System.out.println("The Right View of the Binary Tree is "+viewRight(root));
   }
 }
