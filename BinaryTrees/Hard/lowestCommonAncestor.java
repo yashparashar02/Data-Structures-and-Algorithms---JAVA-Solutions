@@ -34,9 +34,9 @@ public class lowestCommonAncestor {
     root.right.right=new TreeNode(7);
     root.right.right.right=new TreeNode(10);
 
-    TreeNode p = root.right.right, q = root.right.left.right;
+    TreeNode p = root.right.right, q = root.right.left;
 
     TreeNode result = lowestCommAncestor(root, p, q);
-    System.out.println("The Lowest Common Ancestor of 7 and 9 is: "+result.val);
+    System.out.println("The Lowest Common Ancestor of 6 and 7 is: "+result.val);
   }
 }
