@@ -1,6 +1,7 @@
 package DailyProblems;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class minimumPushesII {
   static int minPush(String word) {
@@ -17,10 +18,18 @@ public class minimumPushesII {
       if(freq[i] == 0)
         break;
 
-      int cost=(position/8)+1;
-      pushes+=freq[i]*cost;
+      pushes+=freq[i]*((position/8)+1);
       position++;
     }
     return pushes;
+  }
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+
+    System.out.println("Enter the word");
+    String word=s.nextLine();
+
+    System.out.println("The Minimum Number of Pushes are: "+minPush(word));
+    s.close();
   }
 }
