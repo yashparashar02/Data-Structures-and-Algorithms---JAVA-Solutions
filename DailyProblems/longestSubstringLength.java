@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class longestSubstringLength {
   static int lengthLongestSubstring(String s) {
-    int maxLength=0;
-
-    int lastIndex[]=new int[128];
+    int maxLength=0, lastIndex[]=new int[128];
     Arrays.fill(lastIndex, -1);
 
     int left=0, right;
