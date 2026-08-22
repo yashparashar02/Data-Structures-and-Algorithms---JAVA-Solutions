@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class distributeElemArrrays {
   static int[] resultArray(int[] nums) {
     List<Integer> arr1=new ArrayList<>(), arr2=new ArrayList<>();
