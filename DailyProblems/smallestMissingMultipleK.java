@@ -23,6 +23,7 @@ public class smallestMissingMultipleK {
     System.out.println("Enter the range for array");
     int n=s.nextInt();
 
+    System.out.println("Enter "+n+" values for the array");
     int nums[]=new int[n], i;
     for(i=0; i<n; i++)
       nums[i]=s.nextInt();
@@ -30,7 +31,7 @@ public class smallestMissingMultipleK {
     System.out.println("Enter the value of K");
     int k=s.nextInt();
 
-    System.out.println("The Smallest Missing MUltiple of "+k+"from the array is: "+missingMultiple(nums, k));
+    System.out.println("The Smallest Missing MUltiple of "+k+" from the array is: "+missingMultiple(nums, k));
     s.close();
   }
 }
