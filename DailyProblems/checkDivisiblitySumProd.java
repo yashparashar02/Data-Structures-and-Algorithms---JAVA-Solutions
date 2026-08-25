@@ -3,7 +3,7 @@ package DailyProblems;
 import java.util.Scanner;
 
 public class checkDivisiblitySumProd {
-  static boolean checkDivisiblity(int n) {
+  static boolean checkDivisiblityNum(int n) {
     int temp=n, sum=0, prod=1;
 
     while(temp > 0) {
@@ -24,10 +24,10 @@ public class checkDivisiblitySumProd {
     System.out.println("Enter the Number to check Divisiblity");
     int n=s.nextInt();
 
-    if(checkDivisiblity(n))
-      System.out.println(checkDivisiblity(n)+", "+n+" is Divisible by the Sum of its Digit's Sum and Product");
+    if(checkDivisiblityNum(n))
+      System.out.println(checkDivisiblityNum(n)+", "+n+" is Divisible by the Sum of its Digit's Sum and Product");
 
-    else System.out.println(checkDivisiblity(n)+", "+n+" is not Divisible by the Sum of its Digit's Sum and Product");
+    else System.out.println(checkDivisiblityNum(n)+", "+n+" is not Divisible by the Sum of its Digit's Sum and Product");
     s.close();
   }
 }
