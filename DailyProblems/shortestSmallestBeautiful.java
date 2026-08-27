@@ -1,5 +1,7 @@
 package DailyProblems;
 
+import java.util.Scanner;
+
 public class shortestSmallestBeautiful {
   static String lexicographicallString(String s, int k) {
     int left=0, right, onesCount=0, minLen=Integer.MAX_VALUE;
@@ -31,5 +33,17 @@ public class shortestSmallestBeautiful {
       }
     }
     return result;
+  }
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+
+    System.out.println("Enter the String");
+    String s=sc.nextLine();
+
+    System.out.println("Enter the value of 'k'");
+    int k=sc.nextInt();
+
+    System.out.println("The Shortest and Lexicographically Smallest Beautiful String is: "+lexicographicallString(s, k));
+    sc.close();
   }
 }
