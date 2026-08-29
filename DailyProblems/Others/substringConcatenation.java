@@ -75,7 +75,6 @@ public class substringConcatenation {
         System.out.print(" ");
     }
     System.out.println();
-
     sc.close();
   }
 }
