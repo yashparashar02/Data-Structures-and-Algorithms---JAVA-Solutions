@@ -1,25 +1,12 @@
 package BinaryTrees.MediumProblems;
 
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class balancedTree {
   static boolean isBalanced(TreeNode root) {
     return check(root) != -1;
   }
+
   static int check(TreeNode root) {
     if(root == null)
       return 0;
@@ -37,6 +24,7 @@ public class balancedTree {
 
     return 1+Math.max(lH, rH);
   }
+
   public static void main(String[] args) {
     
     TreeNode root=new TreeNode(1);

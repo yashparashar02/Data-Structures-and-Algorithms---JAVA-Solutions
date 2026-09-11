@@ -2,21 +2,7 @@ package BinaryTrees.Hard;
 
 import java.util.ArrayList;
 
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class rootToLeafPath {
   static ArrayList<ArrayList<Integer>> rootToLeaf(TreeNode root) {
@@ -31,7 +17,7 @@ public class rootToLeafPath {
     if(node == null)
       return;
 
-    path.add(node.val);
+    path.add(node.data);
 
     if(node.left == null && node.right == null)
       result.add(new ArrayList<>(path));

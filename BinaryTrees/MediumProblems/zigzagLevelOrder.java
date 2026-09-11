@@ -1,26 +1,11 @@
 package BinaryTrees.MediumProblems;
 
+import BinaryTrees.TreeNode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
 
 public class zigzagLevelOrder {
   static List<List<Integer>> zigzag(TreeNode root) {
@@ -41,7 +26,7 @@ public class zigzagLevelOrder {
         TreeNode current=queue.poll();
 
         int index=leftToRight ? i : size-i-1;
-        level[index] = current.val;
+        level[index] = current.data;
 
         if(current.left != null)
           queue.offer(current.left);

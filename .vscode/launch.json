@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "balancedTree",
+      "request": "launch",
+      "mainClass": "BinaryTrees.MediumProblems.balancedTree",
+      "projectName": "DSA_552e055"
+    },
+    {
+      "type": "java",
       "name": "Current File",
       "request": "launch",
       "mainClass": "${file}"

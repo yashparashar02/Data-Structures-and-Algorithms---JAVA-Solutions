@@ -1,13 +1,7 @@
 package BinaryTrees.Traversals.basic;
 
-class TreeNode{
-  int data;
-  TreeNode left, right;
+import BinaryTrees.TreeNode;
 
-  TreeNode(int data) {
-    this.data=data;
-  }
-}
 public class preorderTraversal {
   static void preorder(TreeNode root) {
     if(root == null) 

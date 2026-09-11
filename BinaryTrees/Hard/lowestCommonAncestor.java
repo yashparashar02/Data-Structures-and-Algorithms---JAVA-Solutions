@@ -1,13 +1,6 @@
 package BinaryTrees.Hard;
 
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode(int x) {
-    val=x;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class lowestCommonAncestor {
   static TreeNode lowestCommAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -37,6 +30,6 @@ public class lowestCommonAncestor {
     TreeNode p = root.right.right, q = root.right.left;
 
     TreeNode result = lowestCommAncestor(root, p, q);
-    System.out.println("The Lowest Common Ancestor of 6 and 7 is: "+result.val);
+    System.out.println("The Lowest Common Ancestor of 6 and 7 is: "+result.data);
   }
 }

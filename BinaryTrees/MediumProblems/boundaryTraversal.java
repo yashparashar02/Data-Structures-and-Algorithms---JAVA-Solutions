@@ -1,23 +1,8 @@
 package BinaryTrees.MediumProblems;
 
+import BinaryTrees.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
-
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
 
 public class boundaryTraversal {
   static List<Integer> boundary(TreeNode root) {
@@ -27,7 +12,7 @@ public class boundaryTraversal {
       return result;
 
     if(!isLeaf(root))
-      result.add(root.val);
+      result.add(root.data);
 
     leftBoundary(root.left, result);
     leaves(root, result);
@@ -35,13 +20,15 @@ public class boundaryTraversal {
 
     return result;
   }
+
   static boolean isLeaf(TreeNode node) {
     return node.left == null && node.right == null;
   }
+
   static void leftBoundary(TreeNode node, List<Integer> result) {
     while(node != null) {
       if(!isLeaf(node))
-        result.add(node.val);
+        result.add(node.data);
 
       if(node.left != null)
         node=node.left;
@@ -49,23 +36,25 @@ public class boundaryTraversal {
       else node=node.right;
     }
   }
+
   static void leaves(TreeNode node, List<Integer> result) {
     if(node == null)
       return;
 
     if(isLeaf(node)) {
-      result.add(node.val);
+      result.add(node.data);
       return;
     }
     leaves(node.left, result);
     leaves(node.right, result);
   }
+
   static void rightBoundary(TreeNode node, List<Integer> result) {
     List<Integer> temp=new ArrayList<>();
 
     while(node != null) {
       if(!isLeaf(node))
-        temp.add(node.val);
+        temp.add(node.data);
 
       if(node.right != null)
         node=node.right;
@@ -75,6 +64,7 @@ public class boundaryTraversal {
     for(int i=temp.size()-1; i>0; i--)
       result.add(temp.get(i));
   }
+  
   public static void main(String arr[]) {
 
     TreeNode root=new TreeNode(1);

@@ -1,18 +1,11 @@
 package BinaryTrees.Traversals;
 
+import BinaryTrees.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-class TreeNode {
-  int data;
-  TreeNode left, right;
-
-  TreeNode(int data) {
-    this.data = data;
-  }
-}
 public class levelOrderTraversalP {
   static List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> ans=new ArrayList<>();

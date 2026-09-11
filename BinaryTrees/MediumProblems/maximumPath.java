@@ -1,20 +1,6 @@
 package BinaryTrees.MediumProblems;
 
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class maximumPath {
   static int maxSum=Integer.MIN_VALUE;
@@ -32,11 +18,11 @@ public class maximumPath {
 
     int leftSum=Math.max(0, maxPathSum(node.left)), rightSum=Math.max(0, maxPathSum(node.right));
 
-    int currPath=leftSum + node.val + rightSum;
+    int currPath=leftSum + node.data + rightSum;
 
     maxSum=Math.max(maxSum, currPath);
 
-    return node.val + Math.max(leftSum, rightSum);
+    return node.data + Math.max(leftSum, rightSum);
   }
   public static void main(String[] args) {
     

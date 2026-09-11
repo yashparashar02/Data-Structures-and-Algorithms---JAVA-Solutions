@@ -1,16 +1,8 @@
 package BinaryTrees.Traversals.basic;
 
+import BinaryTrees.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
-
-class TreeNode {
-  int data;
-  TreeNode left, right;
-
-  TreeNode(int data) {
-    this.data=data;
-  }
-}
 
 public class levelOrderTraversal {
   static void levelOrder(TreeNode root) {

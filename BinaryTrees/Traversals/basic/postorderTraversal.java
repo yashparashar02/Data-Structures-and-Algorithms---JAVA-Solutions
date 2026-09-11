@@ -1,13 +1,6 @@
 package BinaryTrees.Traversals.basic;
 
-class TreeNode {
-  int data;
-  TreeNode left, right;
-
-  TreeNode(int data) {
-    this.data=data;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class postorderTraversal {
   static void postorder(TreeNode node) {
@@ -18,6 +11,7 @@ public class postorderTraversal {
     postorder(node.right);
     System.out.print(node.data+" ");
   }
+
   public static void main(String[] args) {
     
     System.out.println("Postorder Traversal");

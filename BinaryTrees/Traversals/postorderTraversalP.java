@@ -1,25 +1,9 @@
 package BinaryTrees.Traversals;
 
+import BinaryTrees.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-
-class TreeNode {
-  int data;
-  TreeNode left, right;
-
-  TreeNode() {}
-
-  TreeNode(int data) {
-    this.data=data;
-  }
-  
-  TreeNode(int data, TreeNode left, TreeNode right) {
-    this.data=data;
-    this.left=left;
-    this.right=right;
-  }
-}
 
 public class postorderTraversalP {
   static List<Integer> postorder(TreeNode root) {

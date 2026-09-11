@@ -1,14 +1,6 @@
 package BinaryTrees.Hard;
 
-class TreeNode {
-  int val;
-  TreeNode left;
-  TreeNode right;
-
-  public TreeNode(int val) {
-      this.val = val;
-    }
-  }
+import BinaryTrees.TreeNode;
 
 public class childrenSumProperty {
   static void childrenSum(TreeNode root) {
@@ -18,33 +10,33 @@ public class childrenSumProperty {
     int child=0, total=0;
 
     if(root.left != null)
-      child+=root.left.val;
+      child+=root.left.data;
 
     if(root.right != null)
-      child+=root.right.val;
+      child+=root.right.data;
 
-    if(child >= root.val)
-      root.val=child;
+    if(child >= root.data)
+      root.data=child;
 
     else {
       if(root.left != null)
-        root.left.val = root.val;
+        root.left.data = root.data;
 
       if(root.right != null)
-        root.right.val = root.val;
+        root.right.data = root.data;
     }
 
     childrenSum(root.left);
     childrenSum(root.right);
 
     if(root.left != null)
-      total+=root.left.val;
+      total+=root.left.data;
 
     if(root.right != null)
-      total+=root.right.val;
+      total+=root.right.data;
 
     if(root.left != null || root.right != null)
-      root.val=total;
+      root.data=total;
   }
   public static void main(String[] args) {
     

@@ -3,15 +3,7 @@ package BinaryTrees.Traversals;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-
-class TreeNode {
-  int data;
-  TreeNode left, right;
-
-  TreeNode(int data) {
-    this.data=data;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class inorderTraversalP {
   static List<Integer> inorder(TreeNode root) {

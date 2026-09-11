@@ -1,20 +1,6 @@
 package BinaryTrees.MediumProblems;
 
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class sameTree {
   static boolean isSame(TreeNode tree1, TreeNode tree2) {
@@ -24,7 +10,7 @@ public class sameTree {
     if(tree1 == null || tree2 == null)
       return false;
 
-    if(tree1.val != tree2.val)
+    if(tree1.data != tree2.data)
       return false;
 
     return isSame(tree1.left, tree2.left) && isSame(tree1.right, tree2.right);

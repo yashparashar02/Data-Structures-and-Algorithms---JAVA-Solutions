@@ -1,27 +1,12 @@
 package BinaryTrees.MediumProblems;
 
+import BinaryTrees.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.TreeMap;
-
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
 
 class Pair {
   TreeNode node;
@@ -48,7 +33,7 @@ public class verticalTraversal {
         map.putIfAbsent(current.col, new TreeMap<>());
         map.get(current.col).putIfAbsent(current.row, new PriorityQueue<>());
 
-        map.get(current.col).get(current.row).offer(current.node.val);
+        map.get(current.col).get(current.row).offer(current.node.data);
 
         if (current.node.left != null) 
           queue.offer(new Pair(current.node.left, current.row + 1, current.col - 1));

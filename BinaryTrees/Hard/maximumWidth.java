@@ -1,24 +1,10 @@
 package BinaryTrees.Hard;
 
+import BinaryTrees.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class maximumWidth {
-  static class TreeNode {
-    int val;
-    TreeNode left, right;
-
-    TreeNode() {}
-    TreeNode(int val) {
-      this.val=val;
-    }
-
-    TreeNode (int val, TreeNode left, TreeNode right) {
-      this.val=val;
-      this.left=left;
-      this.right=right;
-    }
-  }
   static class Pair {
     TreeNode node;
     long index;

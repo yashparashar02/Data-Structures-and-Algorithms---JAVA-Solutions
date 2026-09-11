@@ -1,14 +1,7 @@
 package BinaryTrees.Traversals.basic;
 
 
-class TreeNode {
-  int data;
-  TreeNode left, right;
-  
-  TreeNode(int data) {
-    this.data=data;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class inorderTraversal {
   static void inorder(TreeNode root) {

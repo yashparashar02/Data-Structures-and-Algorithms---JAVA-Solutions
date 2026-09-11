@@ -6,21 +6,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.TreeMap;
 
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
+import BinaryTrees.TreeNode;
 
 class Pair {
   TreeNode node;
@@ -48,7 +34,7 @@ public class topView {
       Pair current=queue.poll();
 
       if(!map.containsKey(current.hd))
-        map.put(current.hd, current.node.val);
+        map.put(current.hd, current.node.data);
 
       if(current.node.left != null)
         queue.offer(new Pair(current.node.left, current.hd-1));

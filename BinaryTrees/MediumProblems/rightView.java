@@ -1,23 +1,8 @@
 package BinaryTrees.MediumProblems;
 
+import BinaryTrees.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
-
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
 
 public class rightView {
   static List<Integer> viewRight(TreeNode root) {
@@ -32,7 +17,7 @@ public class rightView {
       return;
 
     if(level == result.size())
-      result.add(node.val);
+      result.add(node.data);
 
     dfs(node.left, level+1, result);
     dfs(node.right, level+1, result);

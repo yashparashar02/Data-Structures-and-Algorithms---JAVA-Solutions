@@ -1,20 +1,6 @@
 package BinaryTrees.MediumProblems;
 
-class TreeNode {
-  int val;
-  TreeNode left, right;
-
-  TreeNode() {}
-  TreeNode(int val) {
-    this.val=val;
-  }
-
-  TreeNode (int val, TreeNode left, TreeNode right) {
-    this.val=val;
-    this.left=left;
-    this.right=right;
-  }
-}
+import BinaryTrees.TreeNode;
 
 public class symmetricCheck {
   static boolean isSymmetric(TreeNode root) {
@@ -27,7 +13,7 @@ public class symmetricCheck {
     if(left == null || right == null)
       return false;
 
-    if(left.val != right.val)
+    if(left.data != right.data)
       return false;
 
     return check(left.left, right.right) && check(left.right, right.left);

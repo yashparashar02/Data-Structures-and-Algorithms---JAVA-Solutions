@@ -1,17 +1,9 @@
 package BinaryTrees.Traversals;
 
+import BinaryTrees.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-
-class TreeNode {
-  int data;
-  TreeNode left, right;
-
-  TreeNode(int data) {
-    this.data=data;
-  }
-}
 
 public class preorderTraversalP {
   static List<Integer> preorder(TreeNode root) {
