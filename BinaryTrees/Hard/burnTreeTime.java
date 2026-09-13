@@ -61,7 +61,7 @@ public class burnTreeTime {
 		}
 		return res;
 	}
-	public static int timeToBurnTree(TreeNode root, int start) {
+	static int timeToBurnTree(TreeNode root, int start) {
     HashMap<TreeNode, TreeNode> map = new HashMap<>();
 		TreeNode target = bfsToMapParents(root, map, start);
 		int maxi=findMaxDistance(map, target);
