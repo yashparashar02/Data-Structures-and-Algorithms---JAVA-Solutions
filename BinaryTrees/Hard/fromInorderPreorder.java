@@ -5,6 +5,9 @@ import java.util.*;
 
 public class fromInorderPreorder {
   static TreeNode fromInPreOrder(int[] preorder, int[] inorder) {
+    if(preorder == null || inorder == null || preorder.length != inorder.length)
+      return null;
+    
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     for(int i=0; i<inorder.length; i++)
       map.put(inorder[i], i);
