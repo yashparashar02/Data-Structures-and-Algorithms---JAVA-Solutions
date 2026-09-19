@@ -1,6 +1,7 @@
 package BinaryTrees.MediumProblems;
 
 import BinaryTrees.TreeNode;
+import BinaryTrees.Pair;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,17 +9,17 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.TreeMap;
 
-class Pair {
-  TreeNode node;
-  int row;
-  int col;
+// class Pair {
+//   TreeNode node;
+//   int row;
+//   int col;
 
-  Pair(TreeNode node, int row, int col) {
-    this.node = node;
-    this.row = row;
-    this.col = col;
-  }
-}
+//   Pair(TreeNode node, int row, int col) {
+//     this.node = node;
+//     this.row = row;
+//     this.col = col;
+//   }
+// }
 
 public class verticalTraversal {
   static List<List<Integer>> verticalTraversalTree(TreeNode root) {
