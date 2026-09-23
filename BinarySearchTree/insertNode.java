@@ -2,7 +2,7 @@ package BinarySearchTree;
 
 import java.util.Scanner;
 
-public class inserNode {
+public class insertNode {
   static TreeNode insert(TreeNode root, int val) {
     if(root == null)
       return new TreeNode(val);
