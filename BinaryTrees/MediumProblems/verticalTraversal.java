@@ -1,7 +1,6 @@
 package BinaryTrees.MediumProblems;
 
 import BinaryTrees.TreeNode;
-import BinaryTrees.Pair;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,27 +8,31 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.TreeMap;
 
-// class Pair {
-//   TreeNode node;
-//   int row;
-//   int col;
-
-//   Pair(TreeNode node, int row, int col) {
-//     this.node = node;
-//     this.row = row;
-//     this.col = col;
-//   }
-// }
-
 public class verticalTraversal {
+  private static class NodePosition {
+    TreeNode node;
+    int row;
+    int col;
+
+    NodePosition(TreeNode node, int row, int col) {
+      this.node = node;
+      this.row = row;
+      this.col = col;
+    }
+  }
   static List<List<Integer>> verticalTraversalTree(TreeNode root) {
+    List<List<Integer>> result = new ArrayList<>();
+
+    if(root == null)
+      return result;
+
     TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
 
-      Queue<Pair> queue = new LinkedList<>();
-      queue.offer(new Pair(root, 0, 0));
+      Queue<NodePosition> queue = new LinkedList<>();
+      queue.offer(new NodePosition(root, 0, 0));
 
       while (!queue.isEmpty()) {
-        Pair current = queue.poll();
+        NodePosition current = queue.poll();
 
         map.putIfAbsent(current.col, new TreeMap<>());
         map.get(current.col).putIfAbsent(current.row, new PriorityQueue<>());
@@ -37,13 +40,11 @@ public class verticalTraversal {
         map.get(current.col).get(current.row).offer(current.node.data);
 
         if (current.node.left != null) 
-          queue.offer(new Pair(current.node.left, current.row + 1, current.col - 1));
+          queue.offer(new NodePosition(current.node.left, current.row + 1, current.col - 1));
 
         if (current.node.right != null) 
-          queue.offer(new Pair(current.node.right, current.row + 1, current.col + 1));
+          queue.offer(new NodePosition(current.node.right, current.row + 1, current.col + 1));
       }
-
-      List<List<Integer>> result = new ArrayList<>();
 
       for (TreeMap<Integer, PriorityQueue<Integer>> rows : map.values()) {
         List<Integer> column = new ArrayList<>();
