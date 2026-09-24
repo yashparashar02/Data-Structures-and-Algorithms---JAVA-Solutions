@@ -24,13 +24,12 @@ public class deleteNode {
           root.right = helper(root.right);
           break;
         } 
-        else
-          root = root.right;
+        else root = root.right;
       }
     }
     return dummy;
   }
-  static  TreeNode helper(TreeNode root) {
+  static TreeNode helper(TreeNode root) {
     if(root.left == null) 
       return root.right;
     
@@ -44,7 +43,7 @@ public class deleteNode {
       return root.left;
     }
   }
-  static  TreeNode findLastRight(TreeNode root) {
+  static TreeNode findLastRight(TreeNode root) {
     if(root.right == null)
       return root;
 
