@@ -30,7 +30,7 @@ public class bstFromPreorder {
       preorder[i]=s.nextInt();
 
     TreeNode result=fromPreorder(preorder);
-    System.out.println("The Root of the BST is: "+result.data);
+    System.out.println("The Root of the Binary Search Tree is: "+result.data);
     s.close();
   }
 }
