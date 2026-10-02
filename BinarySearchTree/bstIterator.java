@@ -37,7 +37,7 @@ public class bstIterator {
 
     bstIterator iterator = new bstIterator(root);
 
-    System.out.println("The Values of the BST Iterator are: ");
+    System.out.println("The Values of the Binary ST Iterator are: ");
     while(iterator.hasNext())
       System.out.print(iterator.next()+" ");
   }
