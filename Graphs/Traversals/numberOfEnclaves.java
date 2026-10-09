@@ -4,10 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-class Pair {
+class Pair1 {
   int first, second;
 
-  public Pair(int first, int second) {
+  public Pair1(int first, int second) {
     this.first=first;
     this.second=second;
   }
@@ -15,14 +15,14 @@ class Pair {
 
 public class numberOfEnclaves {
   static int numEnclaves(int grid[][]) {
-    Queue<Pair> q=new LinkedList<Pair>();
+    Queue<Pair1> q=new LinkedList<Pair1>();
     int m=grid.length, n=grid[0].length;
     int vis[][]=new int[m][n], i, j;
     for(i=0; i<m; i++) {
       for(j=0; j<n; j++) {
         if(i==0 || j==0 || i==m-1 || j==n-1) {
           if(grid[i][j] == 1) {
-            q.add(new Pair(i, j));
+            q.add(new Pair1(i, j));
             vis[i][j]=1;
           }
         }
@@ -37,7 +37,7 @@ public class numberOfEnclaves {
       for(i=0; i<4; i++) {
         int nRow=row+delRow[i], nCol=col+delCol[i];
         if(nRow >= 0 && nRow < m && nCol >= 0 && nCol < n && vis[nRow][nCol] == 0 && grid[nRow][nCol] == 1) {
-          q.add(new Pair(nRow, nCol));
+          q.add(new Pair1(nRow, nCol));
           vis[nRow][nCol]=1;
         }
       }
