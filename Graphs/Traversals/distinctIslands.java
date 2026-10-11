@@ -4,13 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
-class Duo {
-  int first, second;
-  public Duo(int first, int second) {
-    this.first=first;
-    this.second=second;
-  }
-}
 public class distinctIslands {
   static int numdistinctIsland(int arr[][]) {
     int m=arr.length, n=arr[0].length;
