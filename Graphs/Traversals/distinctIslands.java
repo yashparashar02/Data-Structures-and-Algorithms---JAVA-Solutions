@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class distinctIslands {
-  static int numdistinctIsland(int arr[][]) {
+  static int numDistinctIsland(int arr[][]) {
     int m=arr.length, n=arr[0].length;
 		int vis[][]=new int[m][n], i, j;
 		HashSet<ArrayList<String>> set=new HashSet<>();
@@ -13,22 +13,21 @@ public class distinctIslands {
 			for(j=0; j<n; j++) {
 				if(vis[i][j] == 0 && arr[i][j] == 1) {
 					ArrayList<String> vec=new ArrayList<>();
-					dfs(i, j, vis, arr, vec, i, j);
+					dfs(i, j, vis, arr, vec, i, j, m, n);
 					set.add(vec);
 				}
 			}
 		}
 		return set.size();
 	}
-	static void dfs(int row, int col, int vis[][], int arr[][], ArrayList<String> vec, int row0, int col0) {
-    int m=arr.length, n=arr[0].length;
+	static void dfs(int row, int col, int vis[][], int arr[][], ArrayList<String> vec, int row0, int col0, int m, int n) {
 		vis[row][col]=1;
 		vec.add(toString(row - row0, col - col0));
 		int delRow[]={-1, 0, 1, 0}, delCol[]={0, -1, 0, 1};
 		for(int i=0; i<4; i++) {
 			int nRow=row+delRow[i], nCol=col+delCol[i];
 			if(nRow >= 0 && nRow < m && nCol >= 0 && nCol < n && vis[nRow][nCol] == 0 && arr[nRow][nCol] == 1)
-				dfs(nRow, nCol, vis, arr, vec, row0, col0);
+				dfs(nRow, nCol, vis, arr, vec, row0, col0, m, n);
 		}
 	}
 	static String toString(int r, int c) {
@@ -49,7 +48,7 @@ public class distinctIslands {
         arr[r][c]=s.nextInt();
     }
 
-    System.out.println("\nThere are "+numdistinctIsland(arr)+" Distinct Islands");
+    System.out.println("\nThere are "+numDistinctIsland(arr)+" Distinct Islands");
     s.close();
   }
 }
