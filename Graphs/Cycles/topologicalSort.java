@@ -14,16 +14,16 @@ public class topologicalSort {
       int u=edge[0], w=edge[1];
       adj.get(u).add(w);
     }
-    int vis[]=new int[v];
+    int vis[]=new int[v], i;
     Stack<Integer> st=new Stack<>();
-    for(int i=0; i<v; i++) {
+    for(i=0; i<v; i++) {
       if(vis[i] == 0)
         dfs(i, vis, st, adj);
     }
 
-    int ans[]=new int[v], i=0;
+    int ans[]=new int[v], j=0;
     while(!st.isEmpty()) {
-      ans[i++]=st.peek();
+      ans[j++]=st.peek();
       st.pop();
     }
     return ans;
