@@ -56,7 +56,6 @@ public class cycleDirectedDfs {
     if(isCyclic(edges, v, e))
       System.out.println("True, It is a Directed Cyclic Graph");
     else System.out.println("False, It is not a Directed Cyclic Graph");
-
     s.close();
   }
 }
