@@ -16,9 +16,9 @@ public class cycleDirectedDfs {
 
     int vis[]=new int[v], pathVis[]=new int[v];
     for(int i=0; i<v; i++) {
-    if(vis[i] == 0) {
-      if(dfsCheck(i, adj, vis, pathVis) == true)
-        return true;
+      if(vis[i] == 0) {
+        if(dfsCheck(i, adj, vis, pathVis) == true)
+          return true;
       }
     }
     return false;
@@ -31,9 +31,9 @@ public class cycleDirectedDfs {
       if(vis[adjNode] == 0) {
         if(dfsCheck(adjNode, adj, vis, pathVis) == true)
           return true;
-    }
-    else if(pathVis[adjNode] == 1)
-      return true;
+      }
+      else if(pathVis[adjNode] == 1)
+        return true;
     }
     pathVis[node]=0;
     return false;
