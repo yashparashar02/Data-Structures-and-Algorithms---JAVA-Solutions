@@ -52,7 +52,7 @@ public class topologicalSort {
     }
 
     int result[]=sortTopological(edges, v, e);
-    System.out.println("Topological Order: ");
+    System.out.println("Topological Order using DFS is: ");
     for(int vertex:result)
       System.out.print(vertex+" ");
 
