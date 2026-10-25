@@ -16,8 +16,8 @@ public class safeNodesBfs {
     int indegree[]=new int[v], i;
     for(int edge[]:graph) {
       int from=edge[0], to=edge[1];
-        adjRev.get(to).add(from);
-        indegree[from]++;
+      adjRev.get(to).add(from);
+      indegree[from]++;
     }
     Queue<Integer> q=new LinkedList<Integer>();
     for(i=0; i<v; i++) {

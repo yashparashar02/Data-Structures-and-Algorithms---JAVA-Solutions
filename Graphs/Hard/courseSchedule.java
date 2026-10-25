@@ -1,14 +1,13 @@
-package Graphs.Cycles;
+package Graphs.Hard;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 
 public class courseSchedule {
   static boolean canFinish(int numCourses, int prerequisites[][]) {
-    List<List<Integer>> adj=new ArrayList<>();
+    ArrayList<ArrayList<Integer>> adj=new ArrayList<>();
     int indegree[]=new int[numCourses], i;
 
     for(i=0; i<numCourses; i++)
